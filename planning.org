@@ -1,0 +1,16 @@
+#+TITLE: Planning
+
+* TODO Add components
+** DONE New Deck
+** TODO New Question
+** DONE Tabs
+** TODO Button
+** TODO Stack
+** TODO Card
+** DONE Decks
+** DONE StatusBar
+* DONE Add navigation to components
+* TODO Add Async Storage
+* TODO (Optional) Add Redux
+* TODO Add animations
+* TODO Create static Decks
