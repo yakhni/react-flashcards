@@ -17,7 +17,9 @@ class Decks extends Component {
     return (
       <View>
         {Object.keys(entries).map((deck, i) => (
-          <ListItem key={i} bottomDivider>
+          <ListItem key={i} bottomDivider
+              onPress={() => this.props.navigation.navigate(
+                'Deck', { title: entries[deck].title })}>
             <ListItem.Content>
               <ListItem.Title>{entries[deck].title}</ListItem.Title>
               <ListItem.Subtitle>{entries[deck].questions.length} Cards</ListItem.Subtitle>
