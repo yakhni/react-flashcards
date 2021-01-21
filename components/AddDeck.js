@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { View, StyleSheet } from "react-native"
-import { Text, Button } from 'react-native-elements';
+import { View } from "react-native"
+import { Text } from 'react-native-elements'
+import Button from './Button'
 import Input from './Input'
 import styles from '../utils/styles'
 
@@ -9,8 +10,8 @@ class AddDeck extends Component {
     return (
       <View style={styles.mainView}>
         <Text h4 style={styles.centered}>What is the title of your new Deck?</Text>
-        <Input placeholder='Deck Title'/>
-        <Button type='solid' title='Create' buttonStyle={{width: 200}}/>
+        <Input placeholder='Deck Title' />
+        <Button title='Create' />
       </View>
     )
   }
