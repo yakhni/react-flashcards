@@ -1,10 +1,10 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
-import { Input } from 'react-native-elements';
+import { Input as NativeInput } from 'react-native-elements';
 
-export default function InputField ({ onChange, style = {} }) {
+export default function Input({ style = {}, ...rest }) {
   return (
-    <Input placeholder='Deck Title' style={[styles.input, style]} />
+    <NativeInput style={[styles.input, style]} {...rest} />
   )
 }
 
