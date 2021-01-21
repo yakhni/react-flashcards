@@ -6,14 +6,12 @@ import { Provider } from 'react-redux'
 import RootStack from './components/Stack'
 import StatusBar from './components/StatusBar'
 import Tabs from './components/Tabs'
-import reducers from './reducers'
+import reducer from './reducer'
 import middleware from './middleware'
-
-const store = createStore(reducers, middleware)
 
 export default function App() {
   return (
-    <Provider store={store}>
+    <Provider store={createStore(reducer, middleware)}>
       <NavigationContainer>
         <StatusBar />
         <View style={{flex: 1}}>
