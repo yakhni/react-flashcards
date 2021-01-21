@@ -5,7 +5,6 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import RootStack from './components/Stack'
 import StatusBar from './components/StatusBar'
-import Tabs from './components/Tabs'
 import reducer from './reducer'
 import middleware from './middleware'
 
