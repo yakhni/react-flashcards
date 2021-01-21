@@ -8,8 +8,6 @@ function entries (state = {}, action) {
         ...action.entries
       }
     case ADD_CARD:
-
-      console.log(action)
       const { entryId, entry } = action
       return {
         ...state,
