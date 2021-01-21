@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 import { Ionicons } from '@expo/vector-icons'
 import { FontAwesome, Entypo } from '@expo/vector-icons'
-import AddDeck from './AddDeck'
+import NewDeck from './NewDeck'
 import Decks from './Decks'
 
 const Tab = Platform.OS === "ios"
@@ -41,8 +41,8 @@ const RouteConfigs = {
       title: 'Decks'
     }
   },
-  AddDeck:{
-    component: AddDeck,
+  NewDeck:{
+    component: NewDeck,
     name: "Add Deck",
     options: {
       tabBarIcon: ({color}) =>
@@ -56,7 +56,7 @@ export default function Tabs() {
   return (
   <Tab.Navigator {...TabNavigatorConfig} >
     <Tab.Screen {...RouteConfigs['Decks']} />
-    <Tab.Screen {...RouteConfigs['AddDeck']} />
+    <Tab.Screen {...RouteConfigs['NewDeck']} />
   </Tab.Navigator>
   )
 }
