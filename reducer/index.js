@@ -1,4 +1,4 @@
-import { ADD_CARD, ADD_ENTRY, RECEIVE_ENTRIES } from '../actions'
+import { ADD_CARD, ADD_DECK, RECEIVE_ENTRIES } from '../actions'
 
 function entries (state = {}, action) {
   switch (action.type) {
@@ -14,6 +14,15 @@ function entries (state = {}, action) {
         [entryId]: {
           ...state[entryId],
           questions: state[entryId].questions.concat([entry])
+        }
+      }
+    case ADD_DECK:
+      const { title } = action
+      return {
+        ...state,
+        [title]: {
+          questions: [],
+          title
         }
       }
     default:

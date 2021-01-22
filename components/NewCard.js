@@ -26,13 +26,12 @@ class NewCard extends Component {
 
         <Input placeholder='Question goes here'
                onChangeText={(question) => this.setState({question})}
-
                value={this.state.question}/>
         <Input placeholder='Answer goes here'
                onChangeText={(answer) => this.setState({answer})}
-
                value={this.state.answer}/>
-      <Button title='Add' onPress={this.handleOnPress}/>
+
+        <Button title='Add' onPress={this.handleOnPress}/>
       </View>
     )
   }
