@@ -16,7 +16,9 @@ class Deck extends Component {
         <Button title='Add Card' onPress={() =>
           this.props.navigation.navigate('NewCard', { entryId: title })
         } />
-        <Button title='Take Quiz' />
+        <Button title='Take Quiz' onPress={() =>
+          this.props.navigation.navigate('Quiz', {title})
+        } />
       </View>
     )
   }

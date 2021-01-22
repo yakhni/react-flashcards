@@ -2,6 +2,7 @@ import React from 'react'
 import Tabs from './Tabs'
 import NewCard from './NewCard'
 import Deck from './Deck'
+import Quiz from './Quiz'
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator()
@@ -11,6 +12,7 @@ export default function RootStack() {
       <Stack.Screen name='Decks' component={Tabs} />
       <Stack.Screen name='Deck' component={Deck} />
       <Stack.Screen name='NewCard' component={NewCard} />
+      <Stack.Screen name='Quiz' component={Quiz} />
     </Stack.Navigator>
   )
 }
