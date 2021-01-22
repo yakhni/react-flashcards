@@ -1,7 +1,7 @@
 import { AsyncStorage } from 'react-native'
 import { formatResults, FLASHCARDS_STORAGE_KEY } from './_flashcards'
 
-export function fetchCalendarResults () {
+export function fetchFlashcards () {
   return AsyncStorage.getItem(FLASHCARDS_STORAGE_KEY)
     .then(formatResults)
 }

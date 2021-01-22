@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
-import { fetchCalendarResults } from '../utils/api'
+import { fetchFlashcards } from '../utils/api'
 import { connect } from 'react-redux'
 import { receiveEntries } from '../actions'
 import { ListItem } from 'react-native-elements'
@@ -8,7 +8,7 @@ import { ListItem } from 'react-native-elements'
 class Decks extends Component {
   componentDidMount () {
     const { dispatch } = this.props
-    fetchCalendarResults()
+    fetchFlashcards()
       .then((entries) => dispatch(receiveEntries(entries)))
   }
 
