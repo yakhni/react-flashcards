@@ -5,18 +5,29 @@ export function fetchFlashcards () {
   return AsyncStorage.getItem(FLASHCARDS_STORAGE_KEY)
     .then(formatResults)
 }
-export function submitEntry ({ entry, key }) {
-  return AsyncStorage.mergeItem(FLASHCARDS_STORAGE_KEY, JSON.stringify({
-    [key]: entry,
-  }))
-}
-
-export function removeEntry (key) {
+export function submitCard (title, card) {
   return AsyncStorage.getItem(FLASHCARDS_STORAGE_KEY)
     .then((results) => {
       const data = JSON.parse(results)
-      data[key] = undefined
-      delete data[key]
-      AsyncStorage.setItem(FLASHCARDS_STORAGE_KEY, JSON.stringify(data))
+      const newData = {
+        ...data,
+          [title]: {
+          ...data[title],
+          questions: data[title].questions.concat([card])
+        }
+      }
+      AsyncStorage.setItem(FLASHCARDS_STORAGE_KEY, JSON.stringify(newData))
     })
+}
+
+export function clear() {
+  return AsyncStorage.clear();
+}
+export function submitDeck (deckTitle)  {
+  return AsyncStorage.mergeItem(FLASHCARDS_STORAGE_KEY, JSON.stringify(
+    { [deckTitle]: {
+      title: deckTitle, questions: []
+      }
+    }
+  ))
 }

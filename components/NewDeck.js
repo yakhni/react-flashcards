@@ -6,6 +6,7 @@ import Input from './Input'
 import styles from '../utils/styles'
 import { connect } from 'react-redux'
 import { addDeck } from '../actions'
+import { submitDeck } from '../utils/api'
 
 class NewDeck extends Component {
   state = {
@@ -15,6 +16,7 @@ class NewDeck extends Component {
   handleOnPress = () => {
     const { add, goBack } = this.props
     add(this.state.value)
+    submitDeck(this.state.value)
     goBack()
   }
 

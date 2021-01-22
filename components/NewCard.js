@@ -6,6 +6,7 @@ import Button from './Button'
 import { connect } from 'react-redux'
 import { addCard } from '../actions'
 import styles from '../utils/styles'
+import { submitCard } from '../utils/api'
 
 class NewCard extends Component {
   state = {
@@ -14,8 +15,9 @@ class NewCard extends Component {
   }
 
   handleOnPress = () => {
-    const { add, goBack } = this.props
+    const { add, goBack, entryId } = this.props
     add(this.state)
+    submitCard(entryId, this.state)
     goBack()
   }
 
