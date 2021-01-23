@@ -1,0 +1,14 @@
+#+TITLE: React Native Flashcards
+* This project is a react-native Flashcards app
+- A user can create a deck of flashcards, add more cards to a deck.
+- A user can quiz himself against a deck.
+
+* Installation
+- clone repo
+- npm install
+- expo start
+
+** Note:
+tested on Android Emulator
+  
+
