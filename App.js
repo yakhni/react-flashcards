@@ -7,6 +7,12 @@ import RootStack from './components/Stack'
 import StatusBar from './components/StatusBar'
 import reducer from './reducer'
 import middleware from './middleware'
+// import { setLocalNotification } from './utils/helpers'
+
+class App extends Component {
+  // componentDidMount() {
+  //   setLocalNotification()
+  // }
 
   render() {
     return (
