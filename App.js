@@ -1,5 +1,5 @@
-import * as React from "react"
-import { View } from "react-native"
+import React, { Component } from 'react'
+import { View } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
@@ -8,15 +8,18 @@ import StatusBar from './components/StatusBar'
 import reducer from './reducer'
 import middleware from './middleware'
 
-export default function App() {
-  return (
-    <Provider store={createStore(reducer, middleware)}>
-      <NavigationContainer>
-        <StatusBar />
-        <View style={{flex: 1}}>
-          <RootStack />
-        </View>
-      </NavigationContainer>
-    </Provider>
-  )
+  render() {
+    return (
+      <Provider store={createStore(reducer, middleware)}>
+        <NavigationContainer>
+          <StatusBar />
+          <View style={{flex: 1}}>
+            <RootStack />
+          </View>
+        </NavigationContainer>
+      </Provider>
+    )
+  }
 }
+
+export default App
