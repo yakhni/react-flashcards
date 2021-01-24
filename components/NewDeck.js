@@ -14,10 +14,10 @@ class NewDeck extends Component {
   }
 
   handleOnPress = () => {
-    const { add, goBack } = this.props
+    const { add, goBack, pop } = this.props
     add(this.state.value)
     submitDeck(this.state.value)
-    goBack()
+    goBack(this.state.value)
   }
 
   render() {
@@ -42,7 +42,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch, {route, navigation}) {
   return {
     add: (title) => dispatch(addDeck(title)),
-    goBack: () => navigation.goBack()
+    goBack: (title) => navigation.navigate('Deck', { title }),
   }
 }
 
