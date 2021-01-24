@@ -14,7 +14,7 @@ class Quiz extends Component {
   }
 
   render() {
-    const { questions, totalQuestions } = this.props
+    const { questions, totalQuestions, navigation } = this.props
     const { correct, incorrect, isQuestion } = this.state
     const currentQuestionIndex = (correct + incorrect)
 
@@ -22,14 +22,14 @@ class Quiz extends Component {
       ? (
         <View style={styles.mainView}>
           <Text>
-            You answered {this.state.correct} {totalQuestions > 1 ? 'questions' : 'question'}
+            You answered {correct} {totalQuestions > 1 ? 'questions' : 'question'}
             correctly!
           </Text>
           <Button title='Take Quiz again' onPress={() => this.setState({
           correct: 0, incorrect: 0
         })}/>
           <Button title='Main Menu' onPress={
-            () => this.props.navigation.navigate('Decks')}/>
+            () => navigation.navigate('Decks')}/>
         </View>
       )
 
@@ -43,18 +43,18 @@ class Quiz extends Component {
         </Text>
 
         <TouchableOpacity onPress={()=>
-          this.setState({isQuestion: this.state.isQuestion ^ 1})}>
+          this.setState({isQuestion: isQuestion ^ 1})}>
           <Text>
             {isQuestion ? 'Answer' : 'Question'}
           </Text>
         </TouchableOpacity>
 
         <Button title='Correct' onPress={() => this.setState({
-          correct: this.state.correct + 1
+          correct: correct + 1
         })}/>
 
         <Button title='Incorrect' onPress={() => this.setState({
-          incorrect: this.state.incorrect + 1
+          incorrect: incorrect + 1
         })}/>
       </View>
     )
