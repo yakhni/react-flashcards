@@ -12,9 +12,17 @@ const Deck = ({ title, subtitle, navigation }) => (
     <Button title='Add Card' onPress={() =>
       navigation.navigate('NewCard', { entryId: title })
     } />
-    <Button title='Take Quiz' onPress={() =>
-      navigation.navigate('Quiz', {title})
-    } />
+    {(subtitle)
+      ? <Button title='Take Quiz' onPress={() =>
+      navigation.navigate('Quiz', {title})} />
+
+     : (
+       <>
+        <Text>Please add a few cards to this deck</Text>
+        <Text>So you can quiz yourself!</Text>
+       </>
+     )
+    }
   </View>
 )
 
