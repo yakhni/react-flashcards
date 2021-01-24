@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { ScrollView, Text } from 'react-native'
 import { fetchFlashcards } from '../utils/api'
 import { connect } from 'react-redux'
 import { receiveEntries } from '../actions'
@@ -15,7 +15,7 @@ class Decks extends Component {
   render() {
     const { entries } = this.props
     return (
-      <View>
+      <ScrollView>
         {Object.keys(entries).map((deck, i) => (
           <ListItem key={i} bottomDivider
               onPress={() => this.props.navigation.navigate(
@@ -27,7 +27,7 @@ class Decks extends Component {
             <ListItem.Chevron />
           </ListItem>
           ))}
-      </View>
+      </ScrollView>
     )
   }
 }
