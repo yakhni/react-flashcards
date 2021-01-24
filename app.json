@@ -1,0 +1,24 @@
+{
+  "name": "Flashcards",
+  "displayName": "Flashcards",
+  "expo": {
+    "orientation": "portrait",
+    "name": "Flashcards",
+    "slug": "Flashcards",
+    "version": "1.0.0",
+    "icon": "https://tylermcginnis.com/udacifitness-512.png",
+      "notification": {
+        "icon": "https://tylermcginnis.com/udacifitness-45.png"
+      },
+      "ios": {
+        "bundleIdentifier": "org.flashcards.exp"
+      },
+      "android": {
+        "package": "org.flashcards.exp",
+        "useNextNotificationsApi": true,
+      },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

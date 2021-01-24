@@ -4,6 +4,9 @@ import { fetchFlashcards } from '../utils/api'
 import { connect } from 'react-redux'
 import { receiveEntries } from '../actions'
 import { ListItem } from 'react-native-elements'
+import { Notifications } from 'expo';
+
+// import * as Notifications from 'expo-notifications';
 
 class Decks extends Component {
   componentDidMount () {

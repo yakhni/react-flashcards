@@ -4,6 +4,7 @@ import Button from './Button'
 import { View } from 'react-native'
 import { Text } from 'react-native-elements'
 import { TouchableOpacity } from 'react-native'
+import Result from './Result'
 import styles from '../utils/styles'
 
 class Quiz extends Component {
@@ -13,6 +14,17 @@ class Quiz extends Component {
     incorrect: 0
   }
 
+  mainMenu = () => {
+    this.props.navigation.navigate('Decks')
+  }
+
+  reset = () => {
+    this.setState({
+      correct: 0,
+      incorrect: 0
+    })
+  }
+
   render() {
     const { questions, totalQuestions, navigation } = this.props
     const { correct, incorrect, isQuestion } = this.state
@@ -20,17 +32,11 @@ class Quiz extends Component {
 
     return (currentQuestionIndex === totalQuestions)
       ? (
-        <View style={styles.mainView}>
-          <Text>
-            You answered {correct} {totalQuestions > 1 ? 'questions' : 'question'}
-            correctly!
-          </Text>
-          <Button title='Take Quiz again' onPress={() => this.setState({
-          correct: 0, incorrect: 0
-        })}/>
-          <Button title='Main Menu' onPress={
-            () => navigation.navigate('Decks')}/>
-        </View>
+        <Result
+          onPressQuizAgain={this.reset}
+          onPressMainMenu={this.mainMenu}
+          totalQuestions={totalQuestions}
+          correct={correct} />
       )
 
     : (
@@ -68,4 +74,5 @@ function mapStateToProps(state, { route }) {
     totalQuestions: state[title].questions.length
   }
 }
+
 export default connect(mapStateToProps)(Quiz)

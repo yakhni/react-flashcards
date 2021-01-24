@@ -7,12 +7,21 @@ import RootStack from './components/Stack'
 import StatusBar from './components/StatusBar'
 import reducer from './reducer'
 import middleware from './middleware'
-// import { setLocalNotification } from './utils/helpers'
+import { setLocalNotification } from './utils/helpers'
+import * as Notifications from 'expo-notifications'
+
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+    shouldPlaySound: false,
+    shouldSetBadge: false,
+  }),
+})
 
 class App extends Component {
-  // componentDidMount() {
-  //   setLocalNotification()
-  // }
+  componentDidMount() {
+    setLocalNotification()
+  }
 
   render() {
     return (
